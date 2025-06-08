@@ -19,6 +19,33 @@ apps/test-suite/load-test-results/test-run-report.json
 apps/playwright-service-ts/node_modules/
 apps/playwright-service-ts/package-lock.json
 
+# Scraped data and temporary files (added for cleanup)
+rize-docs-*/
+*-scraped/
+*-with-images/
+scraped-*/
+temp-*/
+
+# Python scraping scripts (temporary)
+scrape-*.py
+*-scraper.py
+generate-*.py
+requirements.txt
+
+# Generated documentation (temporary)
+*_PRD.md
+*-README.md
+README-*.md
+
+# PowerShell scripts (temporary - except production ones)
+run-*.ps1
+generate-*.ps1
+cleanup-*.ps1
+
+# Temporary documentation files
+RIZE-SCRAPER-README.md
+README-LOCAL-DEVELOPMENT.md
+
 
 /examples/o1_web_crawler/venv
 *.pyc
