@@ -1,30 +1,256 @@
-.DS_Store
-/node_modules/
-/dist/
+# Firecrawl Project .gitignore
+# ================================
+
+# Environment files
 .env
-*.csv
-dump.rdb
-/mongo-data
-apps/js-sdk/node_modules/
-
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
 apps/api/.env.local
-
-apps/test-suite/node_modules/
-
-
 apps/test-suite/.env
-apps/test-suite/logs
-apps/test-suite/load-test-results/test-run-report.json
 
+# Node.js dependencies
+node_modules/
+/node_modules/
+apps/js-sdk/node_modules/
+apps/test-suite/node_modules/
 apps/playwright-service-ts/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+package-lock.json
 apps/playwright-service-ts/package-lock.json
 
-# Scraped data and temporary files (added for cleanup)
+# Build outputs
+/dist/
+build/
+out/
+.next/
+.nuxt/
+.vuepress/dist/
+apps/js-sdk/firecrawl/dist
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+.nyc_output/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+.eslintcache
+.stylelintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# parcel-bundler cache
+.cache
+.parcel-cache
+
+# Serverless directories
+.serverless/
+
+# FuseBox cache
+.fusebox/
+
+# DynamoDB Local files
+.dynamodb/
+
+# TernJS port file
+.tern-port
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+
+# yarn v2
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.coverage.*
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+*.pyc
+.rdb
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# Virtual environments
+/.venv
+/examples/o1_web_crawler/venv
+/examples/o1_web_crawler/firecrawl_env
+/examples/crm_lead_enrichment/crm_lead_enrichment_env
+/examples/claude_web_crawler/firecrawl_env
+/examples/haiku_web_crawler/firecrawl_env
+/examples/sonnet_web_crawler/firecrawl_env
+/examples/internal_link_assitant/firecrawl_env
+
+# IDEs and editors
+.vscode/
+.vscode-test/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Redis
+dump.rdb
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+/mongo-data
+
+# Logs
+logs/
+*.log
+*.log.*
+/apps/api/logs/*
+/apps/api/debug/*
+apps/test-suite/logs
+
+# Test results
+test-results/
+test-output/
+coverage-reports/
+apps/test-suite/load-test-results/test-run-report.json
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Backup files
+*.bak
+*.backup
+
+# Archive files
+*.zip
+*.tar.gz
+*.rar
+
+# CSV and data files
+*.csv
+
+# Local configuration
+config.local.*
+settings.local.*
+
+# Documentation build
+docs/_build/
+docs/build/
+
+# Scraped data and temporary files
 rize-docs-*/
 *-scraped/
 *-with-images/
 scraped-*/
 temp-*/
+firecrawl-data/
+crawl-results/
+scrape-output/
 
 # Python scraping scripts (temporary)
 scrape-*.py
@@ -46,25 +272,149 @@ cleanup-*.ps1
 RIZE-SCRAPER-README.md
 README-LOCAL-DEVELOPMENT.md
 
-
-/examples/o1_web_crawler/venv
-*.pyc
-.rdb
-
-apps/js-sdk/firecrawl/dist
-
-/examples/o1_web_crawler/firecrawl_env
-/examples/crm_lead_enrichment/crm_lead_enrichment_env
-/.venv
-/examples/claude_web_crawler/firecrawl_env
-/examples/haiku_web_crawler/firecrawl_env
-/examples/sonnet_web_crawler/firecrawl_env
-/examples/internal_link_assitant/firecrawl_env
-
-/apps/api/logs/*
-/apps/api/debug/*
-
-.vscode
+# Project specific
 llm-links.txt
 mapped-links.txt
 gke-key.json
+
+# Security files
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# API keys and secrets
+.secrets
+secrets/
+*.secret
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+# Kubernetes
+*.kubeconfig
+
+# Local development
+.local/
+local/
+
+# Kyukei-Panda specific (future development)
+kyukei-panda-data/
+panda-breaks/
+slack-cache/
+team-analytics/
+
+# Firecrawl specific
+crawl-cache/
+playwright-cache/
+browser-profiles/
+session-data/
+
+# Performance and monitoring
+performance-logs/
+monitoring-data/
+metrics/
+traces/
+
+# Backup and recovery
+backups/
+*.backup
+recovery/
+
+# CI/CD
+.github/workflows/secrets/
+.gitlab-ci-local/
+.circleci/local/
+
+# Cloud provider specific
+.aws/
+.gcp/
+.azure/
+
+# Development tools
+.devcontainer/
+.codespaces/
+.replit
+.gitpod.yml
+
+# Package managers
+.pnpm-store/
+.yarn/
+.npm/
+
+# Runtime and process files
+.pid
+.lock
+
+# Editor specific
+.vscode/settings.json
+.vscode/launch.json
+.vscode/tasks.json
+.vscode/extensions.json
+*.code-workspace
+
+# macOS specific
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.TemporaryItems
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Windows specific
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux specific
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# JetBrains IDEs
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# End of .gitignore
